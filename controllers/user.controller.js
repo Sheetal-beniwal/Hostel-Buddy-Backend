@@ -53,7 +53,7 @@ export const register = async (req,res)=>{
         phone,
         bio,
         interest,
-        profilePic:profilePic.url || ""
+        profilePic:profilePic?.url || ""
 
     })
     const createdUser = await User.findById(user._id).select(
@@ -73,7 +73,7 @@ export const loginUser = async(req,res)=>{
     //then generate the access and refresh token
 
     const {name,email,password} = req.body;
-    if(!email || !password){
+    if(!email || !password ||!name){
         return res.json({success:false, message:"missing details"});
     }
     const user = await User.findOne({email});
