@@ -5,6 +5,15 @@ const communitySchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    interest:{
+        type:String,
+        required:true
+    },
+    description:{
+        type:String,
+        required:true   
+
+    },
     members:{
         type:[mongoose.Schema.Types.ObjectId],
         ref:"User"
