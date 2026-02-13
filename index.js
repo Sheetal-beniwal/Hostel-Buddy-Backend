@@ -33,9 +33,11 @@ app.use(cookieParser());
 import router from './routes/user.routes.js';
 import { userProfileRouter } from './routes/userProfile.routes.js';
 import { communityRouter } from './routes/community.routes.js';
+import { lostFoundRouter } from './routes/lostFound.routes.js';
 app.use('/api/users',router);
 app.use('/api/profile',userProfileRouter);
 app.use('/api/community', communityRouter);
+app.use('/api/lostFound',lostFoundRouter)
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
