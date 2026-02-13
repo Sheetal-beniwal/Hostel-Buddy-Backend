@@ -17,11 +17,6 @@ then controller of marking found
 then controller of delete post
 
 
-api 1 --> create post
-api 2--> get all posts
-api 3 --> get specific post
-api 4--> mark item as found
-api 5--> delete post
 
  */
 

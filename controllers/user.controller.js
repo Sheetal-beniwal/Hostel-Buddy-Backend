@@ -30,7 +30,7 @@ export const register = async (req,res)=>{
     //save everything in mongo ........
     //return responseeee
 
-    const {name,email,password,phone,bio,interest} = req.body;
+    const {name,email,password,phone,bio,interest,role} = req.body;
     if(!name || !email || !password || !phone){
         return res.json({success:false, message:"missing details"})
     }
@@ -51,7 +51,8 @@ export const register = async (req,res)=>{
         phone,
         bio,
         interest,
-        profilePic:profilePic?.url || ""
+        profilePic:profilePic?.url || "",
+        role: role || "user"
 
     })
     const createdUser = await User.findById(user._id).select(
