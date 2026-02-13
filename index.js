@@ -32,8 +32,10 @@ app.use(cookieParser());
 //routes
 import router from './routes/user.routes.js';
 import { userProfileRouter } from './routes/userProfile.routes.js';
+import { communityRouter } from './routes/community.routes.js';
 app.use('/api/users',router);
 app.use('/api/profile',userProfileRouter);
+app.use('/api/community', communityRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

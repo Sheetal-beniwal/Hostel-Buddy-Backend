@@ -3,8 +3,6 @@
 import { uploadOnCloudinary } from "../config/cloudinary.js";
 import User from "../models/user.model.js";
 
-import jwt from "jsonwebtoken";
-
 const generateAccessAndRefreshToken = async(userId)=>{
     try{
         const user = await User.findById(userId)
